@@ -11,7 +11,7 @@ on:
           required: true
           type: string
         arch:
-          required: true
+          required: false
           type: string
 
 jobs:
