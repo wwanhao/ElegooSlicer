@@ -97,17 +97,17 @@ jobs:
       - name: Sign app and notary
         if: (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/release/')) && inputs.os == 'macos-14'
         working-directory: ${{ github.workspace }}
-        # env:
-        #   BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-        #   P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
-        #   KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-        #   CERTIFICATE_ID: ${{ secrets.MACOS_CERTIFICATE_ID }}
-
         env:
-          BUILD_CERTIFICATE_BASE64: ${{ elegooslicer }}
-          P12_PASSWORD: ${{ elegooslicer }}
-          KEYCHAIN_PASSWORD: ${{ elegooslicer }}
-          CERTIFICATE_ID: ${{ elegooslicer }}
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          CERTIFICATE_ID: ${{ secrets.MACOS_CERTIFICATE_ID }}
+
+        # env:
+        #   BUILD_CERTIFICATE_BASE64: ${{ elegooslicer }}
+        #   P12_PASSWORD: ${{ elegooslicer }}
+        #   KEYCHAIN_PASSWORD: ${{ elegooslicer }}
+        #   CERTIFICATE_ID: ${{ elegooslicer }}
           
         run: |
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
