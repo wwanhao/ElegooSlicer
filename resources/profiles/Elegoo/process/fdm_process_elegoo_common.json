@@ -39,9 +39,9 @@
     "seam_position": "aligned",
     "skirt_height": "1",
     "skirt_loops": "0",
-    "sparse_infill_density": "7%",
-    "sparse_infill_pattern": "crosshatch",
-    "top_bottom_infill_wall_overlap": "0%",
+    "sparse_infill_density": "15%",
+    "sparse_infill_pattern": "cubic",
+    "top_bottom_infill_wall_overlap": "5%",
     "infill_anchor_max": "1000",
     "minimum_sparse_infill_area": "15",
     "internal_solid_infill_line_width": "0.42",
@@ -89,6 +89,6 @@
     "wipe_before_external_loop": "0",
     "exclude_object": "1",
     "wipe_speed": "100%",
-    "print_flow_ratio": "0.96",
-    "wall_sequence": "inner-outer-inner wall"
+    "print_flow_ratio": "0.97",
+    "wall_sequence": "inner wall/outer wall"
 }
