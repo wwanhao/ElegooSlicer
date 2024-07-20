@@ -6158,7 +6158,7 @@ msgstr ""
 msgid "Units"
 msgstr ""
 
-msgid "Allow only one OrcaSlicer instance"
+msgid "Allow only one ElegooSlicer instance"
 msgstr ""
 
 msgid ""
