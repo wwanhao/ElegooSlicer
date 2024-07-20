@@ -170,7 +170,7 @@ body
 	height: 24px;
 	line-height: 24px;
 	color: #4db6ac;
-	border: 1px solid  #009688;
+	border: 1px solid  #0066FF;
 	border-radius: 4px;
 	cursor: pointer;
 	margin-top: 5px;
@@ -701,7 +701,7 @@ body
 #HotModel_RIGHT_Title:hover
 {
 	cursor: pointer;	
-	color:#009688;	
+	color:#0066FF;	
 }
 
 .HotModelPiece
