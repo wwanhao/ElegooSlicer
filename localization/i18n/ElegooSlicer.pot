@@ -2653,7 +2653,7 @@ msgstr ""
 msgid "Orca Slicer "
 msgstr ""
 
-msgid "OrcaSlicer is based on BambuStudio, PrusaSlicer, and SuperSlicer."
+msgid "ElegooSlicer is based on OrcaSlicer, BambuStudio, PrusaSlicer, and SuperSlicer."
 msgstr ""
 
 msgid "BambuStudio is originally based on PrusaSlicer by PrusaResearch."
