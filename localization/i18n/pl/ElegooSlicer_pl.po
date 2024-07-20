@@ -15827,11 +15827,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "Ustawienia drukarki"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "Zestaw konfiguracji drukarki (.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "Zestaw konfiguracji drukarki (.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "Zestaw filamentu (.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "Zestaw filamentu (.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "Profile drukarki (.zip)"

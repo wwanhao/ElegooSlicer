@@ -15191,11 +15191,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "프린터 설정"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "프린터 구성 번들(.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "프린터 구성 번들(.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "필라멘트 번들(.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "필라멘트 번들(.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "프린터 사전 설정(.zip)"

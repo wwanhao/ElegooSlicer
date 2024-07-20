@@ -15583,11 +15583,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "Yazıcı Ayarı"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "Yazıcı yapılandırma paketi(.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "Yazıcı yapılandırma paketi(.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "Filament demeti(.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "Filament demeti(.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "Yazıcı ön ayarları (.zip)"

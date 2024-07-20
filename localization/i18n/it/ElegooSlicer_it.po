@@ -4894,7 +4894,7 @@ msgid "Retraction test"
 msgstr "Prova di retrazione"
 
 msgid "Elegoo Tolerance Test"
-msgstr "Test di tolleranza dell'orca"
+msgstr "Test di tolleranza dell'elegoo"
 
 msgid "Max flowrate"
 msgstr "Portata massima"
@@ -15796,11 +15796,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "Impostazione della stampante"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "Bundle di configurazione della stampante (.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "Bundle di configurazione della stampante (.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "Bundle filamenti (.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "Bundle filamenti (.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "Preimpostazioni della stampante (.zip)"

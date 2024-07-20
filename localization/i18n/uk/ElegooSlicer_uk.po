@@ -15701,11 +15701,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "Налаштування принтера"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "Пакет конфігурації принтера (.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "Пакет конфігурації принтера (.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "Пакет конфігурації ниток (.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "Пакет конфігурації ниток (.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "Налаштування принтера (.zip)"

@@ -14715,10 +14715,10 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "Printer Setting"
 
-msgid "Printer config bundle(.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
 msgstr ""
 
-msgid "Filament bundle(.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
 msgstr ""
 
 msgid "Printer presets(.zip)"

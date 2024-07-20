@@ -14494,11 +14494,11 @@ msgstr ""
 msgid "Printer Setting"
 msgstr "打印机设置"
 
-msgid "Printer config bundle(.orca_printer)"
-msgstr "打印机预设集(.orca_printer)"
+msgid "Printer config bundle(.elegoo_printer)"
+msgstr "打印机预设集(.elegoo_printer)"
 
-msgid "Filament bundle(.orca_filament)"
-msgstr "材料预设集(.orca_filament)"
+msgid "Filament bundle(.elegoo_filament)"
+msgstr "材料预设集(.elegoo_filament)"
 
 msgid "Printer presets(.zip)"
 msgstr "打印机预设(.zip)"
