@@ -141,7 +141,7 @@ fi
 
 if [[ -n "${BUILD_ORCA}" ]]
 then
-    echo "Configuring OrcaSlicer..."
+    echo "Configuring ElegooSlicer..."
     if [[ -n "${CLEAN_BUILD}" ]]
     then
         rm -fr build
@@ -164,10 +164,10 @@ then
         -DORCA_TOOLS=ON \
         ${BUILD_ARGS}
     echo "done"
-    echo "Building OrcaSlicer ..."
-    cmake --build build --target OrcaSlicer
-    echo "Building OrcaSlicer_profile_validator .."
-    cmake --build build --target OrcaSlicer_profile_validator
+    echo "Building ElegooSlicer ..."
+    cmake --build build --target ElegooSlicer
+    echo "Building ElegooSlicer_profile_validator .."
+    cmake --build build --target ElegooSlicer_profile_validator
     ./run_gettext.sh
     echo "done"
 fi

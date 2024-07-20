@@ -1038,7 +1038,7 @@ static void load_downward_settings_list_from_config(std::string config_file, std
 int CLI::run(int argc, char **argv)
 {
     // Mark the main thread for the debugger and for runtime checks.
-    set_current_thread_name("Elegooslicer_main");
+    set_current_thread_name("elegooslicer_main");
     // Save the thread ID of the main thread.
     save_main_thread_id();
 
@@ -5347,7 +5347,7 @@ int CLI::run(int argc, char **argv)
             glfwGetVersion(&gl_major, &gl_minor, &gl_verbos);
             BOOST_LOG_TRIVIAL(info) << boost::format("opengl version %1%.%2%.%3%")%gl_major %gl_minor %gl_verbos;
 
-            glfwSetErrElegoollback(glfw_callback);
+            glfwSetErrorCallback(glfw_callback);
             int ret = glfwInit();
             if (ret == GLFW_FALSE) {
                 int code = glfwGetError(NULL);
@@ -6033,7 +6033,7 @@ void CLI::print_help(bool include_print_options, PrinterTechnology printer_techn
     boost::nowide::cout
         << SLIC3R_APP_KEY <<"-"<< SLIC3R_VERSION << ":"
         << std::endl
-        << "Usage: Elegoo-slicer [ OPTIONS ] [ file.3mf/file.stl ... ]" << std::endl
+        << "Usage: elegoo-slicer [ OPTIONS ] [ file.3mf/file.stl ... ]" << std::endl
         << std::endl
         << "OPTIONS:" << std::endl;
     cli_misc_config_def.print_cli_help(boost::nowide::cout, false);
@@ -6270,7 +6270,7 @@ LONG WINAPI VectoredExceptionHandler(PEXCEPTION_POINTERS pExceptionInfo)
 
 #if defined(_MSC_VER) || defined(__MINGW32__)
 extern "C" {
-    __declspec(dllexport) int __stdcall Elegooslicer_main(int argc, wchar_t **argv)
+    __declspec(dllexport) int __stdcall elegooslicer_main(int argc, wchar_t **argv)
     {
         // Convert wchar_t arguments to UTF8.
         std::vector<std::string> 	argv_narrow;
