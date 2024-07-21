@@ -245,7 +245,7 @@ AboutDialog::AboutDialog()
     // version
     {
         vesizer->Add(0, FromDIP(165), 1, wxEXPAND, FromDIP(5));
-        auto version_string = _L("Elegoo Slicer ") + " " + std::string(SoftFever_VERSION);
+        auto version_string = _L("Elegoo Slicer ") + " " + std::string(ELEGOOTechSupport_VERSION);
         wxStaticText* version = new wxStaticText(this, wxID_ANY, version_string.c_str(), wxDefaultPosition, wxDefaultSize);
         wxStaticText* bs_version = new wxStaticText(this, wxID_ANY, wxString::Format("Based on OrcaSlicer, PrusaSlicer and BambuStudio"), wxDefaultPosition, wxDefaultSize);
         bs_version->SetFont(Label::Body_12);
