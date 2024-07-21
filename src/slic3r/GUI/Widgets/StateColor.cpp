@@ -6,7 +6,7 @@ static bool gDarkMode = false;
 static bool operator<(wxColour const &l, wxColour const &r) { return l.GetRGBA() < r.GetRGBA(); }
 
 static std::map<wxColour, wxColour> gDarkColors{
-    {"#0066FF", "#00675b"},
+    {"#0066FF", "#0055BF"},
     {"#1F8EEA", "#2778D2"},
     {"#FF6F00", "#D15B00"},
     {"#D01B1B", "#BB2A3A"},
@@ -26,7 +26,7 @@ static std::map<wxColour, wxColour> gDarkColors{
     {"#000000", "#FFFFFE"},
     {"#F4F4F4", "#36363D"},
     {"#DBDBDB", "#4A4A51"},
-    {"#EDFAF2", "#283232"},
+    {"#EDFAF2", "#303d51"},
     {"#323A3C", "#E5E5E6"},
     {"#6B6B6A", "#B3B3B5"},
     {"#303A3C", "#E5E5E5"},
@@ -41,8 +41,8 @@ static std::map<wxColour, wxColour> gDarkColors{
     {"#D9D9D9", "#2D2D32"},
     //{"#F0F0F0", "#4C4C54"},
 	// ORCA
-    {"#BFE1DE", "#223C3C"}, // rgb(191, 225, 222)	Dropdown checked item background color > ORCA color with %25 opacity
-    {"#E5F0EE", "#283232"}, // rgb(229, 240, 238)	Combo / Dropdown focused background color > ORCA color with %10 opacity
+    {"#65afff", "#28304e"}, // rgb(191, 225, 222)	Dropdown checked item background color > ORCA color with %25 opacity
+    {"#8bb8ef", "#303d51"}, // rgb(229, 240, 238)	Combo / Dropdown focused background color > ORCA color with %10 opacity
 };
 
 std::tuple<double, double, double> StateColor::GetLAB(const wxColour& color) {
