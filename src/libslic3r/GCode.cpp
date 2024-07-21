@@ -3203,8 +3203,8 @@ int GCode::get_bed_temperature(const int extruder_id, const bool is_first_layer,
 
 // Write 1st layer bed temperatures into the G-code.
 // Only do that if the start G-code does not already contain any M-code controlling an extruder temperature.
-// M140 - Set Extruder Temperature
-// M190 - Set Extruder Temperature and Wait
+// M140 - Set Bed Temperature
+// M190 - Set Bed Temperature and Wait
 void GCode::_print_first_layer_bed_temperature(GCodeOutputStream &file, Print &print, const std::string &gcode, unsigned int first_printing_extruder_id, bool wait)
 {
     // Initial bed temperature based on the first extruder.
@@ -3773,8 +3773,19 @@ LayerResult GCode::process_layer(
         }
 
         // BBS
+        // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
+        // gcode += m_writer.set_bed_temperature(bed_temp);
+        // Mark the temperature transition from 1st to 2nd layer to be finished.
+
+        // ELEGOO
+        // If the temperature of the other layer is different from the temperature of the first layer, it needs 
+        // to be applied. To facilitate the setup of a hot bed with multi-zone control in a custom G-CODE.
+        int bed_temp0 = get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type);
         int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-        gcode += m_writer.set_bed_temperature(bed_temp);
+        if (bed_temp != bed_temp0)
+        {
+            gcode += m_writer.set_bed_temperature(bed_temp);
+        }
         // Mark the temperature transition from 1st to 2nd layer to be finished.
         m_second_layer_things_done = true;
     }
