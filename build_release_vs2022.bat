@@ -1,4 +1,4 @@
-@REM OcarSlicer build script for Windows
+@REM ElegooSlicer build script for Windows
 @echo off
 set WP=%CD%
 
