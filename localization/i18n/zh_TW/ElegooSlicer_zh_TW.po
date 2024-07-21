@@ -4842,7 +4842,7 @@ msgstr "最大體積流量"
 msgid "VFA"
 msgstr "VFA"
 
-# SoftFever
+# ELEGOOTechSupport
 msgid "More..."
 msgstr "進階校準"
 
