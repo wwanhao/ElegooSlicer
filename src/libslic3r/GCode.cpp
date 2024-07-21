@@ -3773,20 +3773,19 @@ LayerResult GCode::process_layer(
         }
 
         // BBS
-        // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-        // gcode += m_writer.set_bed_temperature(bed_temp);
+        int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
+        gcode += m_writer.set_bed_temperature(bed_temp);
 
 
         // ELEGOO
         // If the temperature of the other layer is different from the temperature of the first layer, it needs 
         // to be applied. To facilitate the setup of a hot bed with multi-zone control in a custom G-CODE.
-        int bed_temp0 = get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type);
-        int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-        gcode += m_writer.set_bed_temperature(bed_temp);
-        if (bed_temp != bed_temp0)
-        {
-            gcode += m_writer.set_bed_temperature(bed_temp);
-        }
+        // int bed_temp0 = get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type);
+        // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
+        // if (bed_temp != bed_temp0)
+        // {
+        //     gcode += m_writer.set_bed_temperature(bed_temp);
+        // }
 
 
 	    
