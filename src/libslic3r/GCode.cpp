@@ -3761,6 +3761,14 @@ LayerResult GCode::process_layer(
         gcode += m_writer.set_jerk_xy(m_config.default_jerk.value);
       }
 
+
+        int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
+      if (m_config.default_acceleration.value > 0 && m_config.initial_layer_acceleration.value > 0) {
+        gcode += m_writer.set_bed_temperature(bed_temp);
+        // gcode += m_writer.set_print_acceleration((unsigned int) floor(m_config.default_acceleration.value + 0.5));
+      }
+
+
         // Transition from 1st to 2nd layer. Adjust nozzle temperatures as prescribed by the nozzle dependent
         // nozzle_temperature_initial_layer vs. temperature settings.
         for (const Extruder &extruder : m_writer.extruders()) {
@@ -3789,12 +3797,6 @@ LayerResult GCode::process_layer(
         //     }
         // Mark the temperature transition from 1st to 2nd layer to be finished.
 
-
-        int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-      if (m_config.default_acceleration.value > 0 && m_config.initial_layer_acceleration.value > 0) {
-        gcode += m_writer.set_bed_temperature(bed_temp);
-        // gcode += m_writer.set_print_acceleration((unsigned int) floor(m_config.default_acceleration.value + 0.5));
-      }
 
 
 
