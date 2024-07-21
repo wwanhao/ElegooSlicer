@@ -3763,7 +3763,7 @@ LayerResult GCode::process_layer(
 
 
         int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-      if (m_config.default_acceleration.value > 0 && m_config.initial_layer_acceleration.value > 0) {
+      if (m_config.hot_plate_temp.value != m_config.hot_plate_temp_initial_layer.value) {
         gcode += m_writer.set_bed_temperature(bed_temp);
         // gcode += m_writer.set_print_acceleration((unsigned int) floor(m_config.default_acceleration.value + 0.5));
       }
