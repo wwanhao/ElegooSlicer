@@ -6250,6 +6250,10 @@ msgstr ""
 msgid "Multi-device Management(Take effect after restarting ElegooSlicer)."
 msgstr ""
 
+msgid "Auto arrange plate after cloning"
+msgstr ""
+"克隆后自动排板"
+
 msgid ""
 "With this option enabled, you can send a task to multiple devices at the "
 "same time and manage multiple devices."

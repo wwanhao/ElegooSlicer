@@ -6404,7 +6404,8 @@ msgstr ""
 "如果启用，ElegooSlicer将自动记住并切换每台打印机的灯丝/工艺配置。"
 
 msgid "Multi-device Management(Take effect after restarting ElegooSlicer)."
-msgstr "多设备管理(重启ElegooSlicer后生效)。"
+msgstr ""
+"多设备管理(重启ElegooSlicer后生效)。"
 
 msgid ""
 "With this option enabled, you can send a task to multiple devices at the "
@@ -6415,7 +6416,8 @@ msgid "Network"
 msgstr "网络"
 
 msgid "Auto sync user presets(Printer/Filament/Process)"
-msgstr "同步用户预设（打印机/耗材丝/工艺）"
+msgstr ""
+"同步用户预设（打印机/耗材丝/工艺）"
 
 msgid "User Sync"
 msgstr "用户同步"
@@ -16280,3 +16282,21 @@ msgstr ""
 
 #~ msgid "Orient the model"
 #~ msgstr "旋转模型"
+
+#~ msgid "Minimize"
+#~ msgstr "最小化"
+
+#~ msgid "Tile Window to Left of Screen"
+#~ msgstr "将窗口平铺到屏幕左侧"
+
+#~ msgid "Tile Window to Right of Screen"
+#~ msgstr "将窗口平铺到屏幕右侧"
+
+#~ msgid "Replace Tiled Window"
+#~ msgstr "平铺窗口"
+
+#~ msgid "Remove Window from Set"
+#~ msgstr "从集合中移除窗口"
+
+#~ msgid "Bring All to Front"
+#~ msgstr "全部摆在最前"
