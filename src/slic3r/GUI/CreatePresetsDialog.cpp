@@ -3315,8 +3315,8 @@ void CreatePresetSuccessfulDialog::on_dpi_changed(const wxRect &suggested_rect) 
 ExportConfigsDialog::ExportConfigsDialog(wxWindow *parent)
     : DPIDialog(parent ? parent : nullptr, wxID_ANY, _L("Export Preset Bundle"), wxDefaultPosition, wxDefaultSize, wxCAPTION | wxCLOSE_BOX)
 {
-    m_exprot_type.preset_bundle   = _L("Printer config bundle(.orca_printer)");
-    m_exprot_type.filament_bundle = _L("Filament bundle(.orca_filament)");
+    m_exprot_type.preset_bundle   = _L("Printer config bundle(.elegoo_printer)");
+    m_exprot_type.filament_bundle = _L("Filament bundle(.elegoo_filament)");
     m_exprot_type.printer_preset  = _L("Printer presets(.zip)");
     m_exprot_type.filament_preset = _L("Filament presets(.zip)");
     m_exprot_type.process_preset  = _L("Process presets(.zip)");
@@ -3739,7 +3739,7 @@ ExportConfigsDialog::ExportCase ExportConfigsDialog::archive_preset_bundle_to_fi
             json process_configs  = json::array();
 
             mz_zip_archive zip_archive;
-            mz_bool        status = initial_zip_archive(zip_archive, export_path + "/" + printer_preset->name + ".orca_printer");
+            mz_bool        status = initial_zip_archive(zip_archive, export_path + "/" + printer_preset->name + ".elegoo_printer");
             if (MZ_FALSE == status) {
                 BOOST_LOG_TRIVIAL(info) << "Failed to initialize ZIP archive";
                 return ExportCase::INITIALIZE_FAIL;
@@ -3856,7 +3856,7 @@ ExportConfigsDialog::ExportCase ExportConfigsDialog::archive_filament_bundle_to_
             std::unordered_map<std::string, json> vendor_structure;
 
             mz_zip_archive zip_archive;
-            mz_bool        status = initial_zip_archive(zip_archive, export_path + "/" + filament_name + ".orca_filament");
+            mz_bool        status = initial_zip_archive(zip_archive, export_path + "/" + filament_name + ".elegoo_filament");
             if (MZ_FALSE == status) {
                 BOOST_LOG_TRIVIAL(info) << "Failed to initialize ZIP archive";
                 return ExportCase::INITIALIZE_FAIL;

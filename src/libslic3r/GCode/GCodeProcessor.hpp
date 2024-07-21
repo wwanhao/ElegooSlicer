@@ -729,7 +729,7 @@ namespace Slic3r {
         enum class EProducer
         {
             Unknown,
-            OrcaSlicer,
+            ElegooSlicer,
             Slic3rPE,
             Slic3r,
             SuperSlicer,
@@ -791,7 +791,7 @@ namespace Slic3r {
         //BBS: set offset for gcode writer
         void set_xy_offset(double x, double y) { m_x_offset = x; m_y_offset = y; }
 
-        // Orca: if true, only change new layer if ETags::Layer_Change occurs
+        // Elegoo: if true, only change new layer if ETags::Layer_Change occurs
         // otherwise when we got a lift of z during extrusion, a new layer will be added
         void detect_layer_based_on_tag(bool enabled) { m_detect_layer_based_on_tag = enabled; }
 

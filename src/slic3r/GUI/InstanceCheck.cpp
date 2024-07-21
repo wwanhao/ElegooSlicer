@@ -105,7 +105,7 @@ namespace instance_check_internal
 			return true;
 		std::wstring classNameString(className);
 		std::wstring wndTextString(wndText);
-		if (wndTextString.find(L"OrcaSlicer") != std::wstring::npos && classNameString == L"wxWindowNR") {
+		if (wndTextString.find(L"ElegooSlicer") != std::wstring::npos && classNameString == L"wxWindowNR") {
 			//check if other instances has same instance hash
 			//if not it is not same version(binary) as this version 
 			HANDLE   handle = GetProp(hwnd, L"Instance_Hash_Minor");
@@ -237,10 +237,12 @@ namespace instance_check_internal
 			dbus_uint32_t 	serial = 0;
 			const char* sigval = message_text.c_str();
 			//std::string		interface_name = "com.prusa3d.prusaslicer.InstanceCheck";
-			std::string		interface_name = "com.softfever3d.orca-slicer.InstanceCheck.Object" + version;
+			// std::string		interface_name = "com.softfever3d.orca-slicer.InstanceCheck.Object" + version;
+			std::string		interface_name = "com.elegoo3d.elegoo-slicer.InstanceCheck.Object" + version;
 			std::string   	method_name = "AnotherInstance";
 			//std::string		object_name = "/com/prusa3d/prusaslicer/InstanceCheck";
-			std::string		object_name = "/com/softfever3d/OrcaSlicer/InstanceCheck/Object" + version;
+			// std::string		object_name = "/com/softfever3d/OrcaSlicer/InstanceCheck/Object" + version;
+			std::string		object_name = "/com/elegoo3d/ElegooSlicer/InstanceCheck/Object" + version;
 
 
 			// initialise the error value
@@ -501,7 +503,7 @@ void OtherInstanceMessageHandler::handle_message(const std::string& message)
 
 	std::vector<boost::filesystem::path> paths;
 	std::vector<std::string> downloads;
-	boost::regex re(R"(^(orcaslicer|prusaslicer|cura|bambustudio):\/\/open[\/]?\?file=)", boost::regbase::icase);
+	boost::regex re(R"(^(elegooslicer|prusaslicer|cura|bambustudio):\/\/open[\/]?\?file=)", boost::regbase::icase);
 	boost::smatch results;
 
 	// Skip the first argument, it is the path to the slicer executable.

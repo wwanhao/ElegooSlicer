@@ -59,7 +59,7 @@ ReleaseNoteDialog::ReleaseNoteDialog(Plater *plater /*= nullptr*/)
 
     m_sizer_body->Add(0, 0, 0, wxLEFT, FromDIP(38));
 
-    auto sm = create_scaled_bitmap("OrcaSlicer", nullptr,  70);
+    auto sm = create_scaled_bitmap("ElegooSlicer", nullptr,  70);
     auto brand = new wxStaticBitmap(this, wxID_ANY, sm, wxDefaultPosition, wxSize(FromDIP(70), FromDIP(70)));
 
     m_sizer_body->Add(brand, 0, wxALL, 0);
@@ -129,7 +129,7 @@ UpdatePluginDialog::UpdatePluginDialog(wxWindow* parent /*= nullptr*/)
 
 
 
-    auto sm = create_scaled_bitmap("OrcaSlicer", nullptr, 55);
+    auto sm = create_scaled_bitmap("ElegooSlicer", nullptr, 55);
     auto brand = new wxStaticBitmap(this, wxID_ANY, sm, wxDefaultPosition, wxSize(FromDIP(55), FromDIP(55)));
 
     wxBoxSizer* m_sizer_right = new wxBoxSizer(wxVERTICAL);
@@ -139,7 +139,7 @@ UpdatePluginDialog::UpdatePluginDialog(wxWindow* parent /*= nullptr*/)
     m_text_up_info->SetForegroundColour(wxColour(0x26, 0x2E, 0x30));
 
 
-    operation_tips = new ::Label(this, Label::Body_12, _L("Click OK to update the Network plug-in when Orca Slicer launches next time."), LB_AUTO_WRAP);
+    operation_tips = new ::Label(this, Label::Body_12, _L("Click OK to update the Network plug-in when Elegoo Slicer launches next time."), LB_AUTO_WRAP);
     operation_tips->SetMinSize(wxSize(FromDIP(260), -1));
     operation_tips->SetMaxSize(wxSize(FromDIP(260), -1));
 
@@ -255,7 +255,7 @@ void UpdatePluginDialog::update_info(std::string json_path)
 }
 
 UpdateVersionDialog::UpdateVersionDialog(wxWindow *parent)
-    : DPIDialog(parent, wxID_ANY, _L("New version of Orca Slicer"), wxDefaultPosition, wxDefaultSize, wxCAPTION | wxCLOSE_BOX | wxRESIZE_BORDER)
+    : DPIDialog(parent, wxID_ANY, _L("New version of Elegoo Slicer"), wxDefaultPosition, wxDefaultSize, wxCAPTION | wxCLOSE_BOX | wxRESIZE_BORDER)
 {
     std::string icon_path = (boost::format("%1%/images/ElegooSlicerTitle.ico") % resources_dir()).str();
     SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
@@ -271,7 +271,7 @@ UpdateVersionDialog::UpdateVersionDialog(wxWindow *parent)
 
     
 
-    auto sm    = create_scaled_bitmap("OrcaSlicer", nullptr, 70);
+    auto sm    = create_scaled_bitmap("ElegooSlicer", nullptr, 70);
     m_brand = new wxStaticBitmap(this, wxID_ANY, sm, wxDefaultPosition, wxSize(FromDIP(70), FromDIP(70)));
 
     
@@ -299,7 +299,7 @@ UpdateVersionDialog::UpdateVersionDialog(wxWindow *parent)
     m_vebview_release_note->Bind(wxEVT_WEBVIEW_NAVIGATING,[=](wxWebViewEvent& event){
         static bool load_url_first = false;
         if(load_url_first){
-            // Orca: not used in Orca Slicer
+            // Elegoo: not used in Elegoo Slicer
             // wxLaunchDefaultBrowser(url_line);
             event.Veto();
         }else{
@@ -1453,7 +1453,7 @@ InputIpAddressDialog::InputIpAddressDialog(wxWindow* parent)
     auto        m_line_top = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(-1, 1));
     m_line_top->SetBackgroundColour(wxColour(166, 169, 170));
 
-    comfirm_before_enter_text = _L("Step 1, please confirm Orca Slicer and your printer are in the same LAN.");
+    comfirm_before_enter_text = _L("Step 1, please confirm Elegoo Slicer and your printer are in the same LAN.");
     comfirm_after_enter_text = _L("Step 2, if the IP and Access Code below are different from the actual values on your printer, please correct them.");
 
 

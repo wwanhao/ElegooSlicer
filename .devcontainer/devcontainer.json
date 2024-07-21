@@ -1,10 +1,10 @@
 {
-	"name": "OrcaSlicer",
+	"name": "ElegooSlicer",
 	"image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-20.04",
 	"runArgs": ["--env-file", "/tmp/devcontainer.env"],
     "features": {
         "ghcr.io/devcontainers/features/desktop-lite:1": {
-			"password": "orca"
+			"password": "elegoo"
 		}
     },
 	"customizations": {

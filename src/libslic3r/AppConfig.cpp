@@ -38,9 +38,16 @@ using namespace nlohmann;
 
 namespace Slic3r {
 
-static const std::string VERSION_CHECK_URL_STABLE = "https://api.github.com/repos/softfever/OrcaSlicer/releases/latest";
-static const std::string VERSION_CHECK_URL = "https://api.github.com/repos/softfever/OrcaSlicer/releases";
-static const std::string PROFILE_UPDATE_URL = "https://api.github.com/repos/OrcaSlicer/orcaslicer-profiles/releases/tags";
+// static const std::string VERSION_CHECK_URL_STABLE = "https://api.github.com/repos/softfever/OrcaSlicer/releases/latest";
+// static const std::string VERSION_CHECK_URL = "https://api.github.com/repos/softfever/OrcaSlicer/releases";
+// static const std::string PROFILE_UPDATE_URL = "https://api.github.com/repos/OrcaSlicer/orcaslicer-profiles/releases/tags";
+
+
+
+static const std::string VERSION_CHECK_URL_STABLE = "https://api.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases/latest";
+static const std::string VERSION_CHECK_URL = "https://api.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases";
+static const std::string PROFILE_UPDATE_URL = "https://api.github.com/repos/ElegooSlicer/elegooslicer-profiles/releases/tags";
+
 static const std::string MODELS_STR = "models";
 
 const std::string AppConfig::SECTION_FILAMENTS = "filaments";
@@ -239,7 +246,7 @@ void AppConfig::set_defaults()
         set("slicer_uuid", to_string(uuid));
     }
 
-    // Orca
+    // Elegoo
     if (get("stealth_mode").empty()) {
         set_bool("stealth_mode", false);
     }
@@ -248,7 +255,7 @@ void AppConfig::set_defaults()
         set_bool("check_stable_update_only", false);
     }
 
-    // Orca
+    // Elegoo
     if(get("show_splash_screen").empty()) {
         set_bool("show_splash_screen", true);
     }
@@ -592,7 +599,7 @@ std::string AppConfig::load()
                     }
                     m_printer_cali_infos.emplace_back(cali_info);
                 }
-            } else if (it.key() == "orca_presets") {
+            } else if (it.key() == "elegoo_presets") {
                 for (auto& j_model : it.value()) {
                     m_printer_settings[j_model["machine"].get<std::string>()] = j_model;
                 }
@@ -770,7 +777,7 @@ void AppConfig::save()
 
     // write machine settings
     for (const auto& preset : m_printer_settings) {
-        j["orca_presets"].push_back(preset.second);
+        j["elegoo_presets"].push_back(preset.second);
     }
     boost::nowide::ofstream c;
     c.open(path_pid, std::ios::out | std::ios::trunc);

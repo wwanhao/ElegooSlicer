@@ -3644,7 +3644,7 @@ void PlateData::parse_filament_info(GCodeProcessorResult *result)
                 m_is_bbl_3mf = true;
                 m_bambuslicer_generator_version = Semver::parse(m_curr_characters.substr(12));
             }
-            else if (boost::starts_with(m_curr_characters, "OrcaSlicer-")) {
+            else if (boost::starts_with(m_curr_characters, "ElegooSlicer-")) {
                 m_is_bbl_3mf = true;
                 m_bambuslicer_generator_version = Semver::parse(m_curr_characters.substr(11));
             }

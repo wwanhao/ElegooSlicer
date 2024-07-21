@@ -2,10 +2,10 @@
 #define _libslic3r_h_
 
 #include "libslic3r_version.h"
-#define SLIC3R_APP_FULL_NAME "Orca Slicer"
-#define GCODEVIEWER_APP_NAME "OrcaSlicer G-code Viewer"
-#define GCODEVIEWER_APP_KEY  "OrcaSlicerGcodeViewer"
-#define GCODEVIEWER_BUILD_ID std::string("OrcaSlicer G-code Viewer-") + std::string(SLIC3R_VERSION) + std::string("-RC")
+#define SLIC3R_APP_FULL_NAME "Elegoo Slicer"
+#define GCODEVIEWER_APP_NAME "ElegooSlicer G-code Viewer"
+#define GCODEVIEWER_APP_KEY  "ElegooSlicerGcodeViewer"
+#define GCODEVIEWER_BUILD_ID std::string("ElegooSlicer G-code Viewer-") + std::string(SLIC3R_VERSION) + std::string("-RC")
 
 // this needs to be included early for MSVC (listing it in Build.PL is not enough)
 #include <memory>
@@ -56,7 +56,7 @@ static constexpr double EPSILON = 1e-4;
 // int32_t fits an interval of (-2147.48mm, +2147.48mm)
 // with int64_t we don't have to worry anymore about the size of the int.
 
-// Orca todo: might be better to use 1e-5 for all, namometer resolution is not needed for 3D printing
+// Elegoo todo: might be better to use 1e-5 for all, namometer resolution is not needed for 3D printing
 static constexpr double SCALING_FACTOR_INTERNAL = 0.000001;
 static constexpr double SCALING_FACTOR_INTERNAL_LARGE_PRINTER = 0.00001;
 static constexpr double LARGE_BED_THRESHOLD = 2147;

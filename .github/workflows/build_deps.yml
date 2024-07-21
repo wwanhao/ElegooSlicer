@@ -136,11 +136,11 @@ jobs:
           name: ElegooSlicer_dep_ubuntu_${{ env.ubuntu-ver }}_${{ env.date }}
           path: ${{ github.workspace }}/deps/build/ElegooSlicer_dep_ubuntu_*.tar.gz
 
-  build_orca:
+  build_elegoo:
     name: Build ElegooSlicer
     needs: [build_deps]
     if: ${{ !cancelled() && !inputs.build-deps-only && (inputs.valid-cache == true && needs.build_deps.result == 'skipped') || (inputs.valid-cache != true && success()) }}
-    uses: ./.github/workflows/build_orca.yml
+    uses: ./.github/workflows/build_elegoo.yml
     with:
       cache-key: ${{ inputs.cache-key }}
       cache-path: ${{ inputs.cache-path }}
