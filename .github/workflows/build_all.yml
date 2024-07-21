@@ -25,7 +25,7 @@ on:
      - 'version.inc'
      - ".github/workflows/build_*.yml"
      # - 'BuildLinux.sh'
-     # - 'build_release_vs2022.bat'
+     - 'build_release_vs2022.bat'
      - 'build_release_macos.sh'
 
   workflow_dispatch: # allows for manual dispatch
@@ -50,10 +50,10 @@ jobs:
           # - os: ubuntu-20.04
           # - os: ubuntu-24.04
           - os: windows-latest
-          - os: macos-14
-            arch: x86_64
-          - os: macos-14
-            arch: arm64
+          # - os: macos-14
+          #   arch: x86_64
+          # - os: macos-14
+          #   arch: arm64
     uses: ./.github/workflows/build_check_cache.yml
     with:
       os: ${{ matrix.os }}
