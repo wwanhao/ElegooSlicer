@@ -204,7 +204,7 @@ bool OpenGLVersionCheck::message_pump_exit = false;
 
 extern "C" {
     typedef int (__stdcall *Slic3rMainFunc)(int argc, wchar_t **argv);
-    Slic3rMainFunc ElegooSlicer_main = nullptr;
+    Slic3rMainFunc elegooslicer_main = nullptr;
 }
 
 extern "C" {

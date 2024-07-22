@@ -3736,6 +3736,7 @@ LayerResult GCode::process_layer(
     }
 
     if (! first_layer && ! m_second_layer_things_done) {
+       unsigned int first_printing_extruder_id;
       if (print.is_BBL_printer()) {
         // BBS: open powerlost recovery
         {
@@ -3780,27 +3781,28 @@ LayerResult GCode::process_layer(
                 gcode += m_writer.set_temperature(temperature, false, extruder.id());
         }
 
-        // BBS
+
+
+        // 这里的逻辑是，切片的第二层会再次设定一次
+        // 温度，gcode += m_writer.set_bed_temperature(bed_temp)的后处理结果是在切片好的Gcode中的
+        // 第二层位置插入加热gcode： M140 S{对应温度} 我希望它可以判断，如果首层温度和其它层温度设定是相同的，则跳过这行代码。
+
+        // BBS  下面两行这是原来的代码 
         // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
         // gcode += m_writer.set_bed_temperature(bed_temp);
         // Mark the temperature transition from 1st to 2nd layer to be finished.
 
+        // 这是希望优化的逻辑，但是不知道为什么会导致编译错误
         // Not working properly
         // ELEGOO
         // If the temperature of the other layer is different from the temperature of the first layer, it needs 
         // to be applied. To facilitate the setup of a hot bed with multi-zone control in a custom G-CODE.
-        // int bed_temp0 = get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type);
-        // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
-        //     if (bed_temp != get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type)){
-        //         gcode += m_writer.set_bed_temperature(bed_temp);
-        //     } else {
-        //     }
+        int bed_temp_first = get_bed_temperature(first_printing_extruder_id, true, print.config().curr_bed_type);
+        int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
+        if ( bed_temp != bed_temp_first ) {
+            gcode += m_writer.set_bed_temperature(bed_temp);
+        }
         // Mark the temperature transition from 1st to 2nd layer to be finished.
-
-
-
-
-
         m_second_layer_things_done = true;
     }
 
