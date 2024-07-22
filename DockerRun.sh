@@ -18,10 +18,10 @@ docker run \
   -e DISPLAY=$DISPLAY \
   `# It seems that libGL and dbus things need privileged mode` \
   --privileged=true \
-  `# Attach tty for running elegoo slicer with command line things` \
+  `# Attach tty for running ElegooSlicer with command line things` \
   -ti \
   `# Clean up after yourself` \
   --rm \
-  `# Pass all parameters from this script to the elegoo slicer  ENTRYPOINT binary` \
+  `# Pass all parameters from this script to the ElegooSlicer  ENTRYPOINT binary` \
   elegooslicer $* 
   

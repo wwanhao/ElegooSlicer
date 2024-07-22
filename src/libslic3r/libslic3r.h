@@ -2,7 +2,7 @@
 #define _libslic3r_h_
 
 #include "libslic3r_version.h"
-#define SLIC3R_APP_FULL_NAME "Elegoo Slicer"
+#define SLIC3R_APP_FULL_NAME "ElegooSlicer"
 #define GCODEVIEWER_APP_NAME "ElegooSlicer G-code Viewer"
 #define GCODEVIEWER_APP_KEY  "ElegooSlicerGcodeViewer"
 #define GCODEVIEWER_BUILD_ID std::string("ElegooSlicer G-code Viewer-") + std::string(SLIC3R_VERSION) + std::string("-RC")

@@ -151,9 +151,9 @@ wxString CopyrightsDialog::get_html_text()
                 "<font size=\"3\">",
          bgr_clr_str, text_clr_str, text_clr_str,
         _L("License"),
-        _L("Elegoo Slicer is licensed under "),
+        _L("ElegooSlicer is licensed under "),
         "https://www.gnu.org/licenses/agpl-3.0.html",_L("GNU Affero General Public License, version 3"),
-        _L("Elegoo Slicer is based on OrcaSlicer, PrusaSlicer and BambuStudio"),
+        _L("ElegooSlicer is based on OrcaSlicer, PrusaSlicer and BambuStudio"),
         _L("Libraries"),
         _L("This software uses open source components whose copyright and other proprietary rights belong to their respective owners"));
 
@@ -245,7 +245,7 @@ AboutDialog::AboutDialog()
     // version
     {
         vesizer->Add(0, FromDIP(165), 1, wxEXPAND, FromDIP(5));
-        auto version_string = _L("Elegoo Slicer ") + " " + std::string(ELEGOOTechSupport_VERSION);
+        auto version_string = _L("ElegooSlicer ") + " " + std::string(ELEGOOTechSupport_VERSION);
         wxStaticText* version = new wxStaticText(this, wxID_ANY, version_string.c_str(), wxDefaultPosition, wxDefaultSize);
         wxStaticText* bs_version = new wxStaticText(this, wxID_ANY, wxString::Format("Based on OrcaSlicer, PrusaSlicer and BambuStudio"), wxDefaultPosition, wxDefaultSize);
         bs_version->SetFont(Label::Body_12);

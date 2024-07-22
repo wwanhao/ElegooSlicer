@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Thank you for using Elegoo Slicer and wanting to report a bug.**
+        **Thank you for using ElegooSlicer and wanting to report a bug.**
         
         Please note that this is not the place to make feature requests or ask for help.
         For this, please use the [Feature request](https://github.com/ELEGOOTechSupport/ElegooSlicer/issues/new?assignees=&labels=&projects=&template=feature_request.yml) issue type or you can discuss your idea on our [Discord server](https://discord.gg/P4VE9UY9gJ) with others.
@@ -22,7 +22,7 @@ body:
     id: version
     attributes:
       label: ElegooSlicer Version
-      description: Which version of Elegoo Slicer are you running? You can see the full version in `Help` -> `About Elegoo Slicer`.
+      description: Which version of ElegooSlicer are you running? You can see the full version in `Help` -> `About ElegooSlicer`.
       placeholder: e.g. 1.9.0
     validations:
       required: true
@@ -103,7 +103,7 @@ body:
             Windows: `%APPDATA%\ElegooSlicer\log` or usually `C:\Users\<your username>\AppData\Roaming\ElegooSlicer\log`
             MacOS: `$HOME/Library/Application Support/ElegooSlicer/log`
             Linux: `$HOME/.config/ElegooSlicer/log`
-            If Elegoo Slicer still starts, you can also reach this directory from the application menu in `Help` -> `Show Configuration Folder`
+            If ElegooSlicer still starts, you can also reach this directory from the application menu in `Help` -> `Show Configuration Folder`
             You can zip the log directory, or just select the newest logs when this issue happens, and zip them
   - type: textarea
     id: file_uploads

@@ -1,6 +1,6 @@
 [![Build all](https://github.com/SoftFever/OrcaSlicer/actions/workflows/build_all.yml/badge.svg?branch=main)](https://github.com/SoftFever/OrcaSlicer/actions/workflows/build_all.yml)
-# Elegoo Slicer     
-Elegoo Slicer is an open source slicer for FDM printers.   
+# ElegooSlicer     
+ElegooSlicer is an open source slicer for FDM printers.   
 
 ![discord-mark-blue](https://github.com/SoftFever/OrcaSlicer/assets/103989404/b97d5ffc-072d-4d0a-bbda-e67ef373876f) Join community: [OrcaSlicer Official Discord Server](https://discord.gg/P4VE9UY9gJ)   
 
@@ -101,7 +101,7 @@ resolution: 0.1
 ```
 
 # Supports
-**Elegoo Slicer** is an open-source project, and I'm deeply grateful to all my sponsors and backers.   
+**ElegooSlicer** is an open-source project, and I'm deeply grateful to all my sponsors and backers.   
 Their generous support enables me to purchase filaments and other essential 3D printing materials for the project.   
 Thank you! :)
 
@@ -153,7 +153,7 @@ Orca Slicer's logo is designed by community member Justin Levine(@freejstnalxndr
 
 
 # License
-Elegoo Slicer is licensed under the GNU Affero General Public License, version 3. Elegoo Slicer is based on Orca Slicer by SoftFever.
+ElegooSlicer is licensed under the GNU Affero General Public License, version 3. ElegooSlicer is based on Orca Slicer by SoftFever.
 Orca Slicer is licensed under the GNU Affero General Public License, version 3. Orca Slicer is based on Bambu Studio by BambuLab.
 
 Bambu Studio is licensed under the GNU Affero General Public License, version 3. Bambu Studio is based on PrusaSlicer by PrusaResearch.
@@ -166,5 +166,5 @@ The GNU Affero General Public License, version 3 ensures that if you use any par
 
 Orca Slicer includes a pressure advance calibration pattern test adapted from Andrew Ellis' generator, which is licensed under GNU General Public License, version 3. Ellis' generator is itself adapted from a generator developed by Sineos for Marlin, which is licensed under GNU General Public License, version 3.
 
-The bambu networking plugin is based on non-free libraries from Bambulab. It is optional to the Elegoo Slicer and provides extended functionalities for Bambulab printer users.
+The bambu networking plugin is based on non-free libraries from Bambulab. It is optional to the ElegooSlicer and provides extended functionalities for Bambulab printer users.
 
