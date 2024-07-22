@@ -3783,17 +3783,11 @@ LayerResult GCode::process_layer(
 
 
 
-        // 这里的逻辑是，切片的第二层会再次设定一次
-        // 温度，gcode += m_writer.set_bed_temperature(bed_temp)的后处理结果是在切片好的Gcode中的
-        // 第二层位置插入加热gcode： M140 S{对应温度} 我希望它可以判断，如果首层温度和其它层温度设定是相同的，则跳过这行代码。
-
-        // BBS  下面两行这是原来的代码 
+        // BBS
         // int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
         // gcode += m_writer.set_bed_temperature(bed_temp);
         // Mark the temperature transition from 1st to 2nd layer to be finished.
 
-        // 这是希望优化的逻辑，但是不知道为什么会导致编译错误
-        // Not working properly
         // ELEGOO
         // If the temperature of the other layer is different from the temperature of the first layer, it needs 
         // to be applied. To facilitate the setup of a hot bed with multi-zone control in a custom G-CODE.
@@ -3801,6 +3795,8 @@ LayerResult GCode::process_layer(
         int bed_temp = get_bed_temperature(first_extruder_id, false, print.config().curr_bed_type);
         if ( bed_temp != bed_temp_first ) {
             gcode += m_writer.set_bed_temperature(bed_temp);
+        } else {
+        gcode +="; No need to reheat.\n";
         }
         // Mark the temperature transition from 1st to 2nd layer to be finished.
         m_second_layer_things_done = true;
@@ -4162,7 +4158,7 @@ LayerResult GCode::process_layer(
         std::vector<ObjectByExtruder::Island::Region> by_region_per_copy_cache;
         for (int print_wipe_extrusions = is_anything_overridden; print_wipe_extrusions>=0; --print_wipe_extrusions) {
             if (is_anything_overridden && print_wipe_extrusions == 0)
-                gcode+="; PURGING FINISHED\n";
+                gcode +="; PURGING FINISHED\n";
             for (InstanceToPrint &instance_to_print : instances_to_print) {
                 const auto& inst = instance_to_print.print_object.instances()[instance_to_print.instance_id];
                 const LayerToPrint &layer_to_print = layers[instance_to_print.layer_id];
