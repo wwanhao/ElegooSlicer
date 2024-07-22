@@ -15,8 +15,8 @@ on:
           type: string
 
 jobs:
-  build_elegoo:
-    name: Build ElegooSlicer
+  build_orca:
+    name: Build OrcaSlicer
     runs-on: ${{ inputs.os }}
     env:
       date:
@@ -43,7 +43,7 @@ jobs:
       - name: Get the version and date on Ubuntu and macOS
         if: inputs.os != 'windows-latest'
         run: |
-          ver_pure=$(grep 'set(ELEGOOTechSupport_VERSION' version.inc | cut -d '"' -f2)
+          ver_pure=$(grep 'set(SoftFever_VERSION' version.inc | cut -d '"' -f2)
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             ver="PR-${{ github.event.number }}"
           else
@@ -66,7 +66,7 @@ jobs:
               $ver = "PR" + $prNumber
           } else {
               $versionContent = Get-Content version.inc -Raw
-              if ($versionContent -match 'set\(ELEGOOTechSupport_VERSION "(.*?)"\)') {
+              if ($versionContent -match 'set\(SoftFever_VERSION "(.*?)"\)') {
                   $ver = $matches[1]
               }
               $ver = "V$ver"
@@ -84,8 +84,8 @@ jobs:
           brew install tree ninja libtool
           brew list
           mkdir -p ${{ github.workspace }}/deps/build_${{inputs.arch}}
-          mkdir -p ${{ github.workspace }}/deps/build_${{inputs.arch}}/ElegooSlicer_dep_${{inputs.arch}}
-          tree ${{ github.workspace }}/deps/build_${{inputs.arch}}/ElegooSlicer_dep_${{inputs.arch}}
+          mkdir -p ${{ github.workspace }}/deps/build_${{inputs.arch}}/OrcaSlicer_dep_${{inputs.arch}}
+          tree ${{ github.workspace }}/deps/build_${{inputs.arch}}/OrcaSlicer_dep_${{inputs.arch}}
 
       - name: Build slicer mac
         if: inputs.os == 'macos-14'
@@ -119,37 +119,37 @@ jobs:
       #     security import $CERTIFICATE_PATH -P $P12_PASSWORD -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
       #     security list-keychain -d user -s $KEYCHAIN_PATH
       #     security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $P12_PASSWORD $KEYCHAIN_PATH
-      #     codesign --deep --force --verbose --options runtime --timestamp --entitlements ${{ github.workspace }}/scripts/disable_validation.entitlements --sign "$CERTIFICATE_ID" ${{ github.workspace }}/build_${{inputs.arch}}/ElegooSlicer/ElegooSlicer.app
-      #     ln -s /Applications ${{ github.workspace }}/build_${{inputs.arch}}/ElegooSlicer/Applications
-      #     hdiutil create -volname "ElegooSlicer" -srcfolder ${{ github.workspace }}/build_${{inputs.arch}}/ElegooSlicer -ov -format UDZO ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
-      #     codesign --deep --force --verbose --options runtime --timestamp --entitlements ${{ github.workspace }}/scripts/disable_validation.entitlements --sign "$CERTIFICATE_ID" ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+      #     codesign --deep --force --verbose --options runtime --timestamp --entitlements ${{ github.workspace }}/scripts/disable_validation.entitlements --sign "$CERTIFICATE_ID" ${{ github.workspace }}/build_${{inputs.arch}}/OrcaSlicer/OrcaSlicer.app
+      #     ln -s /Applications ${{ github.workspace }}/build_${{inputs.arch}}/OrcaSlicer/Applications
+      #     hdiutil create -volname "OrcaSlicer" -srcfolder ${{ github.workspace }}/build_${{inputs.arch}}/OrcaSlicer -ov -format UDZO OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+      #     codesign --deep --force --verbose --options runtime --timestamp --entitlements ${{ github.workspace }}/scripts/disable_validation.entitlements --sign "$CERTIFICATE_ID" OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
       #     xcrun notarytool store-credentials "notarytool-profile" --apple-id "${{ secrets.APPLE_DEV_ACCOUNT }}" --team-id "${{ secrets.TEAM_ID }}" --password "${{ secrets.APP_PWD }}"
-      #     xcrun notarytool submit "ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg" --keychain-profile "notarytool-profile" --wait
-      #     xcrun stapler staple ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+      #     xcrun notarytool submit "OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg" --keychain-profile "notarytool-profile" --wait
+      #     xcrun stapler staple OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
 
       - name: Create DMG without notary
         # if: github.ref != 'refs/heads/main' && inputs.os == 'macos-14'
         if: inputs.os == 'macos-14'
         working-directory: ${{ github.workspace }}
         run: |
-          ln -s /Applications ${{ github.workspace }}/build_${{inputs.arch}}/ElegooSlicer/Applications
-          hdiutil create -volname "ElegooSlicer" -srcfolder ${{ github.workspace }}/build_${{inputs.arch}}/ElegooSlicer -ov -format UDZO ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+          ln -s /Applications ${{ github.workspace }}/build_${{inputs.arch}}/OrcaSlicer/Applications
+          hdiutil create -volname "OrcaSlicer" -srcfolder ${{ github.workspace }}/build_${{inputs.arch}}/OrcaSlicer -ov -format UDZO OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
 
       - name: Upload artifacts mac
         if: inputs.os == 'macos-14'
         uses: actions/upload-artifact@v4
         with:
-          name: ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}
-          path: ${{ github.workspace }}/ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+          name: OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}
+          path: ${{ github.workspace }}/OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
 
       # - name: Deploy Mac release
       #   if: github.ref == 'refs/heads/main' && inputs.os == 'macos-14'
       #   uses: WebFreak001/deploy-nightly@v3.1.0
       #   with:
-      #     upload_url: https://uploads.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases/137995723/assets{?name,label}
+      #     upload_url: https://uploads.github.com/repos/SoftFever/OrcaSlicer/releases/137995723/assets{?name,label}
       #     release_id: 137995723
-      #     asset_path: ${{ github.workspace }}/ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
-      #     asset_name: ElegooSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+      #     asset_path: ${{ github.workspace }}/OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
+      #     asset_name: OrcaSlicer_Mac_${{inputs.arch}}_${{ env.ver }}.dmg
       #     asset_content_type: application/octet-stream
       #     max_releases: 1 # optional, if there are more releases than this matching the asset_name, the oldest ones are going to be deleted
 
@@ -179,7 +179,7 @@ jobs:
         if: inputs.os == 'windows-latest'
         working-directory: ${{ github.workspace }}/build
         shell: cmd
-        run: '"C:/Program Files/7-Zip/7z.exe" a -tzip ElegooSlicer_Windows_${{ env.ver }}_portable.zip ${{ github.workspace }}/build/ElegooSlicer'
+        run: '"C:/Program Files/7-Zip/7z.exe" a -tzip OrcaSlicer_Windows_${{ env.ver }}_portable.zip ${{ github.workspace }}/build/OrcaSlicer'
 
       # - name: Pack PDB
       #   if: inputs.os == 'windows-latest'
@@ -191,15 +191,15 @@ jobs:
       #   if: inputs.os == 'windows-latest'
       #   uses: actions/upload-artifact@v4
       #   with:
-      #     name: ElegooSlicer_Windows_${{ env.ver }}_portable
-      #     path: ${{ github.workspace }}/build/ElegooSlicer_Windows_${{ env.ver }}_portable.zip
+      #     name: OrcaSlicer_Windows_${{ env.ver }}_portable
+      #     path: ${{ github.workspace }}/build/OrcaSlicer_Windows_${{ env.ver }}_portable.zip
 
       - name: Upload artifacts Win installer
         if: inputs.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: ElegooSlicer_Windows_${{ env.ver }}
-          path: ${{ github.workspace }}/build/ElegooSlicer*.exe
+          name: OrcaSlicer_Windows_${{ env.ver }}
+          path: ${{ github.workspace }}/build/OrcaSlicer*.exe
 
       # - name: Upload artifacts Win PDB
       #   if: inputs.os == 'windows-latest'
@@ -212,10 +212,10 @@ jobs:
       #   if: github.ref == 'refs/heads/main' && inputs.os == 'windows-latest'
       #   uses: WebFreak001/deploy-nightly@v3.1.0
       #   with:
-      #     upload_url: https://uploads.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases/137995723/assets{?name,label}
+      #     upload_url: https://uploads.github.com/repos/SoftFever/OrcaSlicer/releases/137995723/assets{?name,label}
       #     release_id: 137995723
-      #     asset_path: ${{ github.workspace }}/build/ElegooSlicer_Windows_${{ env.ver }}_portable.zip
-      #     asset_name: ElegooSlicer_Windows_${{ env.ver }}_portable.zip
+      #     asset_path: ${{ github.workspace }}/build/OrcaSlicer_Windows_${{ env.ver }}_portable.zip
+      #     asset_name: OrcaSlicer_Windows_${{ env.ver }}_portable.zip
       #     asset_content_type: application/x-zip-compressed
       #     max_releases: 1
 
@@ -223,10 +223,10 @@ jobs:
       #   if: github.ref == 'refs/heads/main' && inputs.os == 'windows-latest'
       #   uses: WebFreak001/deploy-nightly@v3.1.0
       #   with:
-      #     upload_url: https://uploads.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases/137995723/assets{?name,label}
+      #     upload_url: https://uploads.github.com/repos/SoftFever/OrcaSlicer/releases/137995723/assets{?name,label}
       #     release_id: 137995723
-      #     asset_path: ${{ github.workspace }}/build/ElegooSlicer_Windows_Installer_${{ env.ver }}.exe
-      #     asset_name: ElegooSlicer_Windows_Installer_${{ env.ver }}.exe
+      #     asset_path: ${{ github.workspace }}/build/OrcaSlicer_Windows_Installer_${{ env.ver }}.exe
+      #     asset_name: OrcaSlicer_Windows_Installer_${{ env.ver }}.exe
       #     asset_content_type: application/x-msdownload
       #     max_releases: 1
 
@@ -262,17 +262,17 @@ jobs:
       #     ubuntu-ver-str: ${{ (inputs.os == 'ubuntu-24.04' && '_Ubuntu2404') || '' }}
       #   run: |
       #     ./BuildLinux.sh -isr
-      #     mv -n ./build/ElegooSlicer_Linux_V${{ env.ver_pure }}.AppImage ./build/ElegooSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
-      #     chmod +x ./build/ElegooSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
+      #     mv -n ./build/OrcaSlicer_Linux_V${{ env.ver_pure }}.AppImage ./build/OrcaSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
+      #     chmod +x ./build/OrcaSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
 
-      # - name: Build elegoo_custom_preset_tests
+      # - name: Build orca_custom_preset_tests
       #   if: github.ref == 'refs/heads/main' && inputs.os == 'ubuntu-20.04'
       #   working-directory: ${{ github.workspace }}/build/src
       #   shell: bash
       #   run: |
-      #     ./ElegooSlicer_profile_validator -p ${{ github.workspace }}/resources/profiles -g 1
+      #     ./OrcaSlicer_profile_validator -p ${{ github.workspace }}/resources/profiles -g 1
       #     cd ${{ github.workspace }}/resources/profiles
-      #     zip -r elegoo_custom_preset_tests.zip user/
+      #     zip -r orca_custom_preset_tests.zip user/
 
       # - name: Upload artifacts Ubuntu
       #   if: ${{ ! env.ACT && inputs.os == 'ubuntu-20.04' || inputs.os == 'ubuntu-24.04' }}
@@ -281,8 +281,8 @@ jobs:
       #     ubuntu-ver-str: ${{ (inputs.os == 'ubuntu-24.04' && '_Ubuntu2404') || '' }}
       #   uses: actions/upload-artifact@v4
       #   with:
-      #     name: ElegooSlicer_Linux_ubuntu_${{ env.ubuntu-ver }}_${{ env.ver }}
-      #     path: './build/ElegooSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage'
+      #     name: OrcaSlicer_Linux_ubuntu_${{ env.ubuntu-ver }}_${{ env.ver }}
+      #     path: './build/OrcaSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage'
 
       # - name: Deploy Ubuntu release
       #   if: ${{ ! env.ACT && github.ref == 'refs/heads/main' && (inputs.os == 'ubuntu-20.04' || inputs.os == 'ubuntu-24.04') }}
@@ -290,20 +290,20 @@ jobs:
       #     ubuntu-ver-str: ${{ (inputs.os == 'ubuntu-24.04' && '_Ubuntu2404') || '' }}
       #   uses: WebFreak001/deploy-nightly@v3.1.0
       #   with:
-      #     upload_url: https://uploads.github.com/repos/SoftFever/ElegooSlicer/releases/137995723/assets{?name,label}
+      #     upload_url: https://uploads.github.com/repos/SoftFever/OrcaSlicer/releases/137995723/assets{?name,label}
       #     release_id: 137995723
-      #     asset_path: ./build/ElegooSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
-      #     asset_name: ElegooSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
+      #     asset_path: ./build/OrcaSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
+      #     asset_name: OrcaSlicer_Linux${{ env.ubuntu-ver-str }}_${{ env.ver }}.AppImage
       #     asset_content_type: application/octet-stream
       #     max_releases: 1 # optional, if there are more releases than this matching the asset_name, the oldest ones are going to be deleted
 
-      # - name: Deploy elegoo_custom_preset_tests
+      # - name: Deploy orca_custom_preset_tests
       #   if: ${{ ! env.ACT && github.ref == 'refs/heads/main' && inputs.os == 'ubuntu-20.04' }}
       #   uses: WebFreak001/deploy-nightly@v3.1.0
       #   with:
-      #     upload_url: https://uploads.github.com/repos/SoftFever/ElegooSlicer/releases/137995723/assets{?name,label}
+      #     upload_url: https://uploads.github.com/repos/SoftFever/OrcaSlicer/releases/137995723/assets{?name,label}
       #     release_id: 137995723
-      #     asset_path: ${{ github.workspace }}/resources/profiles/elegoo_custom_preset_tests.zip
-      #     asset_name: elegoo_custom_preset_tests.zip
+      #     asset_path: ${{ github.workspace }}/resources/profiles/orca_custom_preset_tests.zip
+      #     asset_name: orca_custom_preset_tests.zip
       #     asset_content_type: application/octet-stream
       #     max_releases: 1
