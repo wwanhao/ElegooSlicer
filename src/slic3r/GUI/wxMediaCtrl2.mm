@@ -1,6 +1,6 @@
 //
 //  wxMediaCtrl2.m
-//  OrcaSlicer
+//  ElegooSlicer
 //
 //  Created by cmguo on 2021/12/7.
 //
