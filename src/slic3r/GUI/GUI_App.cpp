@@ -2417,7 +2417,6 @@ bool GUI_App::on_init_inner()
                 {
                  case wxID_YES:
                      wxLaunchDefaultBrowser(download_url);
-                     wxLaunchDefaultBrowser(https:\\wiki.elegoo.com.cn/slicer/fdm/elegooslicer);
                      break;
                  case wxID_NO:
                      wxGetApp().mainframe->Close(true);
