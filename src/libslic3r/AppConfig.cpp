@@ -47,6 +47,7 @@ namespace Slic3r {
 static const std::string VERSION_CHECK_URL_STABLE = "https://api.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases/latest";
 static const std::string VERSION_CHECK_URL = "https://api.github.com/repos/ELEGOOTechSupport/ElegooSlicer/releases";
 static const std::string PROFILE_UPDATE_URL = "https://api.github.com/repos/ElegooSlicer/elegooslicer-profiles/releases/tags";
+static const std::string PROFILE_UPDATE_URL1 = "https://wiki.elegoo.com.cn/slicer/fdm/elegooslicer";
 
 static const std::string MODELS_STR = "models";
 
@@ -1334,6 +1335,11 @@ std::string AppConfig::version_check_url(bool stable_only/* = false*/) const
 std::string AppConfig::profile_update_url() const
 {
     return PROFILE_UPDATE_URL;
+}
+
+std::string AppConfig::profile_update_url1() const
+{
+    return PROFILE_UPDATE_URL1;
 }
 
 bool AppConfig::exists()

@@ -665,9 +665,11 @@ void PresetUpdater::priv::sync_config()
     AppConfig *app_config = GUI::wxGetApp().app_config;
 
     auto profile_update_url = app_config->profile_update_url() + "/" + ELEGOOTechSupport_VERSION;
+    auto profile_update_url1 = app_config->profile_update_url1() + "/" + ELEGOOTechSupport_VERSION;
     // parse the assets section and get the latest asset by comparing the name
 
     Http::get(profile_update_url)
+    Http::get(profile_update_url1)
         .on_error([cache_profile_path, cache_profile_update_file](std::string body, std::string error, unsigned http_status) {
             // ElegooSlicer: we check the response body to see if it's "Not Found", if so, it means for the current ElegooSlicer version we don't have OTA
             // updates, we can delete the cache file
