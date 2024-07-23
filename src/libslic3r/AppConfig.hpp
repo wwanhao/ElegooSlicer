@@ -249,7 +249,6 @@ public:
 
 	// Get the Elegoo profile update url.
 	std::string 		profile_update_url() const;
-	std::string 		profile_update_url1() const;
 
 	// Returns the original Slic3r version found in the ini file before it was overwritten
 	// by the current version
