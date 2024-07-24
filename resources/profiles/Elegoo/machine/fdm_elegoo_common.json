@@ -150,6 +150,6 @@
     "1"
   ],
   "machine_start_gcode": "\n;LAYER_COUNT:[total_layer_count]\n;LAYER:0\n",
-  "layer_change_gcode": ";AFTER_LAYER_CHANGE\n;LAYER:{layer_num+1}\n",
+  "layer_change_gcode": ";LAYER:{layer_num+1}\n",
   "scan_first_layer": "0"
 }
