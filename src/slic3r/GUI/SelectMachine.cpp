@@ -1186,7 +1186,7 @@ SelectMachineDialog::SelectMachineDialog(Plater *plater)
     m_comboBox_printer->Bind(wxEVT_COMBOBOX, &SelectMachineDialog::on_selection_changed, this);
 
     m_sizer_printer->Add(m_comboBox_printer, 1, wxEXPAND | wxRIGHT, FromDIP(5));
-    m_btn_bg_enable = StateColor(std::pair<wxColour, int>(wxColour(0, 102, 153), StateColor::Pressed), std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
+    m_btn_bg_enable = StateColor(std::pair<wxColour, int>(wxColour(0, 102, 153), StateColor::Pressed), std::pair<wxColour, int>(wxColour(51, 102, 153), StateColor::Hovered),
                                std::pair<wxColour, int>(wxColour(0, 120, 189), StateColor::Normal));
 
     m_button_refresh = new Button(this, _L("Refresh"));

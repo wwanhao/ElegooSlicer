@@ -380,7 +380,7 @@ wxBoxSizer* FileArchiveDialog::create_btn_sizer()
 
     auto apply_highlighted_btn_colors = [](Button* btn) {
         btn->SetBackgroundColor(StateColor(std::pair<wxColour, int>(wxColour(0, 102, 153), StateColor::Pressed),
-                                           std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
+                                           std::pair<wxColour, int>(wxColour(51, 102, 153), StateColor::Hovered),
                                            std::pair<wxColour, int>(wxColour(0, 120, 189), StateColor::Normal)));
 
         btn->SetBorderColor(StateColor(std::pair<wxColour, int>(wxColour(0, 120, 189), StateColor::Normal)));
