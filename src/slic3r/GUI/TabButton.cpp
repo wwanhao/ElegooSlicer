@@ -14,7 +14,7 @@ EVT_PAINT(TabButton::paintEvent)
 
 END_EVENT_TABLE()
 
-static wxColour BORDER_HOVER_COL = wxColour(40, 40, 255);
+static wxColour BORDER_HOVER_COL = wxColour(0, 120, 189);
 
 const static wxColour TAB_BUTTON_BG    = wxColour("#FEFFFF");
 const static wxColour TAB_BUTTON_SEL   = wxColour(219, 253, 213, 255);
