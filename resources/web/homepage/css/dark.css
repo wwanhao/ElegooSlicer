@@ -20,11 +20,11 @@ body
 }
 
 .ZScrol::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    background-color: #939594;
+    background-color: #939395;
 }
 
 .ZScrol::-webkit-scrollbar-track {/*滚动条里面轨道*/
-        background: #161817;
+        background: #161618;
 }
 
 
@@ -33,7 +33,7 @@ body
 /*----Left Menu Button----*/
 #LogoutBtn:hover
 {
-	background: #001570;
+	background: #0066dd;
 	color: #efeff0;
 }
 
@@ -45,7 +45,7 @@ body
 .BtnItem:hover
 {
 	color: #efeff0;
-	background-color: #001570;
+	background-color: #0066dd;
 }
 
 .BtnItem:hover .LeftIcon
@@ -56,7 +56,7 @@ body
 .BtnItemSelected
 {
 	color: #efeff0;
-	background-color: #001570;
+	background-color: #0066dd;
 }
 
 .BtnItemSelected .LeftIcon
@@ -68,7 +68,7 @@ body
 .MenuItem:hover
 {
 	border-color: #4066b6;
-	background-color: #001570;
+	background-color: #0066dd;
 }
 
 #RecentClearAllBtn:hover

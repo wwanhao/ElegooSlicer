@@ -47,7 +47,7 @@ html, body {
 .LinkBtn
 {
 	font-size:12px;
-	color: #00ffea;	
+	color: #0080FF;	
 	cursor: pointer;
 }
 
@@ -127,7 +127,7 @@ body
 
 #DownloadBtn
 {
-	color:#00ffd9;
+	color:#0080FF;
 }
 
 
@@ -203,12 +203,12 @@ body
 
 .BtnItem:hover
 {
-	background-color: #E0FCEB;
+	background-color: #E0E8FC;
 }
 
 .BtnItemSelected
 {
-	background-color: #e0fcf3;
+	background-color: #E0E0FC;
 }
 
 .BtnIcon
@@ -278,7 +278,7 @@ body
 .MenuItem:hover
 {
 	border-color: #4066b6;
-	background-color: #E0FCEB;
+	background-color: #E0E8FC;
 }
 
 .MenuIcon
@@ -369,7 +369,7 @@ body
 
 #RecentClearAllBtn:hover
 {
-	background-color:#CDCECE;
+	background-color:#CDCDCE;
 }
 
 #RecentTitle
