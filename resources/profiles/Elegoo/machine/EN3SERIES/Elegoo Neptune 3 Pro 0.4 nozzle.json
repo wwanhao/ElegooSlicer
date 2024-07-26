@@ -90,10 +90,10 @@
     "85%"
   ],
   "retraction_length": [
-    "2.5"
+    "1.5"
   ],
   "retraction_speed": [
-    "60"
+    "30"
   ],
   "retract_length_toolchange": [
     "2"
