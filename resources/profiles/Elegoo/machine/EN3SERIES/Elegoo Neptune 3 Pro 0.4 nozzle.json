@@ -101,6 +101,11 @@
   "deretraction_speed": [
     "30"
   ],
+  "thumbnails": [
+    "320x320/COLPIC", 
+    "160x160/COLPIC", 
+    "160x160/PNG"],
+  "thumbnails_format": "COLPIC",
   "single_extruder_multi_material": "1",
   "change_filament_gcode": "",
   "machine_pause_gcode": "M600",
