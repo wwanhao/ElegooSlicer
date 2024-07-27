@@ -1,6 +1,6 @@
 {
   "name": "Elegoo",
-  "version": "01.00.01.05",
+  "version": "01.00.01.06",
   "force_update": "0",
   "description": "Elegoo configurations",
   "machine_model_list": [
@@ -68,8 +68,6 @@
 
 
 
-
-    
 
 
 
@@ -1329,20 +1327,12 @@
 
 
     {
-        "name": "Elegoo ASA @EOS Giga",
-        "sub_path": "filament/EOSGIGA/Elegoo ASA @EOS Giga.json"
-    },
-    {
-        "name": "Elegoo PETG PRO @EOS Giga",
-        "sub_path": "filament/EOSGIGA/Elegoo PETG PRO @EOS Giga.json"
-    },
-    {
         "name": "Elegoo PLA @EOS Giga",
         "sub_path": "filament/EOSGIGA/Elegoo PLA @EOS Giga.json"
     },
     {
-        "name": "Elegoo PLA Matte @EOS Giga",
-        "sub_path": "filament/EOSGIGA/Elegoo PLA Matte @EOS Giga.json"
+        "name": "Elegoo PETG PRO @EOS Giga",
+        "sub_path": "filament/EOSGIGA/Elegoo PETG PRO @EOS Giga.json"
     }
 
 
