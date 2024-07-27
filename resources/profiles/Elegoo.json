@@ -1329,12 +1329,20 @@
 
 
     {
-        "name": "Elegoo PLA @EOS Giga",
-        "sub_path": "filament/EOSGIGA/Elegoo PLA @EOS Giga.json"
+        "name": "Elegoo ASA @EOS Giga",
+        "sub_path": "filament/EOSGIGA/Elegoo ASA @EOS Giga.json"
     },
     {
         "name": "Elegoo PETG PRO @EOS Giga",
         "sub_path": "filament/EOSGIGA/Elegoo PETG PRO @EOS Giga.json"
+    },
+    {
+        "name": "Elegoo PLA @EOS Giga",
+        "sub_path": "filament/EOSGIGA/Elegoo PLA @EOS Giga.json"
+    },
+    {
+        "name": "Elegoo PLA Matte @EOS Giga",
+        "sub_path": "filament/EOSGIGA/Elegoo PLA Matte @EOS Giga.json"
     }
 
 
