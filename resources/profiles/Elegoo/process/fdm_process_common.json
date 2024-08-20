@@ -26,6 +26,7 @@
     "sparse_infill_line_width": "0.45",
     "infill_wall_overlap": "15%",
     "sparse_infill_speed": "50",
+    "overhang_speed_classic": "1",
     "interface_shells": "0",
     "detect_overhang_wall": "0",
     "reduce_infill_retraction": "1",
