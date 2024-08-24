@@ -95,8 +95,8 @@
   "scan_first_layer": "0",
   "auxiliary_fan": "0",
   "single_extruder_multi_material": "1",
-  "change_filament_gcode": "M400\nM600",
-  "machine_pause_gcode": "PAUSE",
+  "change_filament_gcode": "M600",
+  "machine_pause_gcode": "M600",
   "default_filament_profile": [
       "Elegoo PLA"
   ],
