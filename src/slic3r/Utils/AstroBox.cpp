@@ -107,7 +107,7 @@ bool AstroBox::upload(PrintHostUpload upload_data, ProgressFn prorgess_fn, Error
 
     bool res = true;
 
-    auto url = make_url("api/files/local");
+    auto url = make_url("api/local");
 
     BOOST_LOG_TRIVIAL(info) << boost::format("%1%: Uploading file %2% at %3%, filename: %4%, path: %5%, print: %6%")
         % name

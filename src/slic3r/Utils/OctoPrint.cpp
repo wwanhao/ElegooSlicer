@@ -380,7 +380,7 @@ bool OctoPrint::upload_inner_with_resolved_ip(PrintHostUpload upload_data, Progr
     const char* name = get_name();
     const auto upload_filename = upload_data.upload_path.filename();
     const auto upload_parent_path = upload_data.upload_path.parent_path();
-    std::string url = substitute_host(make_url("api/uploadFile/upload"), resolved_addr.to_string());
+    std::string url = substitute_host(make_url("api/local"), resolved_addr.to_string());
     bool result = true;
 
     info_fn(L"resolve", boost::nowide::widen(url));
@@ -454,7 +454,7 @@ bool OctoPrint::upload_inner_with_host(PrintHostUpload upload_data, ProgressFn p
     {
         // If https is entered we assume signed ceritificate is being used
         // IP resolving will not happen - it could resolve into address not being specified in cert
-        url = make_url("api/uploadFile/upload");
+        url = make_url("api/local");
     }
 #ifdef WIN32
     else {
@@ -465,7 +465,7 @@ bool OctoPrint::upload_inner_with_host(PrintHostUpload upload_data, ProgressFn p
         // Solves troubles of uploades failing with name address.
         // in original address (m_host) replace host for resolved ip 
         info_fn(L"resolve", test_msg_or_host_ip);
-        url = substitute_host(make_url("api/uploadFile/upload"), GUI::into_u8(test_msg_or_host_ip));
+        url = substitute_host(make_url("api/local"), GUI::into_u8(test_msg_or_host_ip));
         BOOST_LOG_TRIVIAL(info) << "Upload address after ip resolve: " << url;
     }
 #endif // _WIN32
