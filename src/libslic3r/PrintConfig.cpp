@@ -3238,11 +3238,11 @@ void PrintConfigDef::init_fff_params()
     def->set_default_value(new ConfigOptionString(""));
 
     def = this->add("host_type", coEnum);
-    // def->label = L("Host Type");
+    def->label = L("Host Type");
     def->tooltip = L("ElegooSlicer can upload G-code files to a printer host. This field must contain "
                    "the kind of the host.");
     def->enum_keys_map = &ConfigOptionEnum<PrintHostType>::get_enum_values();
-    // def->enum_values.push_back("prusalink");
+    def->enum_values.push_back("prusalink");
     // def->enum_values.push_back("prusaconnect");
     def->enum_values.push_back("octoprint");
     // def->enum_values.push_back("duet");
@@ -3254,9 +3254,9 @@ void PrintConfigDef::init_fff_params()
     // def->enum_values.push_back("obico");
     // def->enum_values.push_back("flashforge");
     // def->enum_values.push_back("simplyprint");
-    // def->enum_labels.push_back("PrusaLink");
+    def->enum_labels.push_back("ElegooLink");
     // def->enum_labels.push_back("PrusaConnect");
-    // def->enum_labels.push_back("ElegooLink");
+    def->enum_labels.push_back("OctoPrint");
     // def->enum_labels.push_back("Duet");
     // def->enum_labels.push_back("FlashAir");
     // def->enum_labels.push_back("AstroBox");
