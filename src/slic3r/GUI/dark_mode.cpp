@@ -71,37 +71,37 @@ namespace NppDarkMode
 
 	COLORREF GetBackgroundColor()
 	{
-		return IsEnabled() ? RGB(0x2B, 0x2B, 0x2B) : wxSystemSettings::GetColour(wxSYS_COLOUR_MENUBAR).GetRGB();
+		return IsEnabled() ? RGB(0x1E, 0x39, 0x5B) : wxSystemSettings::GetColour(wxSYS_COLOUR_MENUBAR).GetRGB();
 	}
 
 	COLORREF GetSofterBackgroundColor()
 	{
-		return IsEnabled() ? RGB(0x40, 0x40, 0x40) : RGB(0xD9, 0xD9, 0xD9); //RGB(0x78, 0x78, 0x78);
+		return IsEnabled() ? RGB(0x34, 0x49, 0x5E) : RGB(0xD9, 0xD9, 0xD9); // RGB(0x78, 0x78, 0x78);
 	}
 
 	COLORREF GetTextColor()
 	{
-		return IsEnabled() ? RGB(0xF0, 0xF0, 0xF0) : wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT).GetRGB();
+		return IsEnabled() ? RGB(0xE0, 0xE0, 0xFF) : wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT).GetRGB();
 	}
 
 	COLORREF GetHotTextColor()
 	{
-		return IsEnabled() ? RGB(0xFF, 0xFF, 0xFF) : wxSystemSettings::GetColour(wxSYS_COLOUR_ACTIVEBORDER).GetRGB();
+		return IsEnabled() ? RGB(0x00, 0x7B, 0xFF) : wxSystemSettings::GetColour(wxSYS_COLOUR_ACTIVEBORDER).GetRGB();
 	}
 
 	COLORREF GetSofterTextColor()
 	{
-		return IsEnabled() ? RGB(0xF0, 0xF0, 0xF0) : RGB(0x64, 0x64, 0x64);
+		return IsEnabled() ? RGB(0xE0, 0xE0, 0xFF) : RGB(0x64, 0x64, 0x64);
 	}
 
 	COLORREF GetDarkerTextColor()
 	{
-		return RGB(0xC0, 0xC0, 0xC0);
+		return RGB(0x80, 0x80, 0xA0);
 	}
 
 	COLORREF GetEdgeColor()
 	{
-		return RGB(0x80, 0x80, 0x80);
+		return RGB(0x40, 0x40, 0x60);
 	}
 
 	HBRUSH GetBackgroundBrush()
