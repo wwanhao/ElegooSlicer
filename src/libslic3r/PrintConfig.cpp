@@ -2638,7 +2638,7 @@ void PrintConfigDef::init_fff_params()
     def->set_default_value(new ConfigOptionBool(true));
 
     def = this->add("gcode_flavor", coEnum);
-    // def->label = L("G-code flavor");
+    def->label = L("G-code flavor");
     def->tooltip = L("What kind of gcode the printer is compatible with");
     def->enum_keys_map = &ConfigOptionEnum<GCodeFlavor>::get_enum_values();
     def->enum_values.push_back("marlin");
