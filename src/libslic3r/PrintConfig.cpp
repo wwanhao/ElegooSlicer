@@ -1812,7 +1812,7 @@ void PrintConfigDef::init_fff_params()
     */
 
     def = this->add("pellet_flow_coefficient", coFloats);
-    def->label = L("Pellet flow coefficient");
+    // def->label = L("Pellet flow coefficient");
     def->tooltip = L("Pellet flow coefficient is emperically derived and allows for volume calculation for pellet printers.\n\nInternally it is converted to filament_diameter. All other volume calculations remain the same.\n\nfilament_diameter = sqrt( (4 * pellet_flow_coefficient) / PI )");
     def->min = 0;
     def->set_default_value(new ConfigOptionFloats{ 0.4157 });
@@ -2653,8 +2653,8 @@ void PrintConfigDef::init_fff_params()
     //def->enum_values.push_back("machinekit");
     //def->enum_values.push_back("smoothie");
     //def->enum_values.push_back("no-extrusion");
-    def->enum_labels.push_back("Marlin(legacy)");
-    def->enum_labels.push_back(L("Klipper"));
+    // def->enum_labels.push_back("Marlin(legacy)");
+    // def->enum_labels.push_back(L("Klipper"));
     // def->enum_labels.push_back("RepRapFirmware");
     //def->enum_labels.push_back("RepRap/Sprinter");
     //def->enum_labels.push_back("Repetier");
@@ -3238,7 +3238,7 @@ void PrintConfigDef::init_fff_params()
     def->set_default_value(new ConfigOptionString(""));
 
     def = this->add("host_type", coEnum);
-    def->label = L("Host Type");
+    // def->label = L("Host Type");
     def->tooltip = L("ElegooSlicer can upload G-code files to a printer host. This field must contain "
                    "the kind of the host.");
     def->enum_keys_map = &ConfigOptionEnum<PrintHostType>::get_enum_values();
@@ -3256,7 +3256,7 @@ void PrintConfigDef::init_fff_params()
     // def->enum_values.push_back("simplyprint");
     // def->enum_labels.push_back("PrusaLink");
     // def->enum_labels.push_back("PrusaConnect");
-    def->enum_labels.push_back("ElegooLink");
+    // def->enum_labels.push_back("ElegooLink");
     // def->enum_labels.push_back("Duet");
     // def->enum_labels.push_back("FlashAir");
     // def->enum_labels.push_back("AstroBox");
