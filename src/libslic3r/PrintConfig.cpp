@@ -2653,8 +2653,8 @@ void PrintConfigDef::init_fff_params()
     //def->enum_values.push_back("machinekit");
     //def->enum_values.push_back("smoothie");
     //def->enum_values.push_back("no-extrusion");
-    // def->enum_labels.push_back("Marlin(legacy)");
-    // def->enum_labels.push_back(L("Klipper"));
+    def->enum_labels.push_back("Marlin(legacy)");
+    def->enum_labels.push_back(L("Klipper"));
     // def->enum_labels.push_back("RepRapFirmware");
     //def->enum_labels.push_back("RepRap/Sprinter");
     //def->enum_labels.push_back("Repetier");
@@ -2666,7 +2666,8 @@ void PrintConfigDef::init_fff_params()
     //def->enum_labels.push_back("Machinekit");
     //def->enum_labels.push_back("Smoothie");
     //def->enum_labels.push_back(L("No extrusion"));
-    def->mode = comAdvanced;
+    // def->mode = comAdvanced;
+    def->mode = comDevelop;
     def->readonly = false;
     def->set_default_value(new ConfigOptionEnum<GCodeFlavor>(gcfMarlinLegacy));
 
@@ -2674,6 +2675,7 @@ void PrintConfigDef::init_fff_params()
     def->label   = L("Pellet Modded Printer");
     def->tooltip = L("Enable this option if your printer uses pellets instead of filaments");
     def->mode    = comSimple;
+    def->readonly = true;
     def->set_default_value(new ConfigOptionBool(false));
 
     def = this->add("support_multi_bed_types", coBool);
@@ -3026,7 +3028,7 @@ void PrintConfigDef::init_fff_params()
             (void)L("Maximum speed Z");
             (void)L("Maximum speed E");
             def->category = L("Machine limits");
-            def->readonly = false;
+            def->readonly = true;
             def->tooltip  = (boost::format("Maximum speed of %1% axis") % axis_upper).str();
             (void)L("Maximum X speed");
             (void)L("Maximum Y speed");
@@ -3044,7 +3046,7 @@ void PrintConfigDef::init_fff_params()
             (void)L("Maximum acceleration Z");
             (void)L("Maximum acceleration E");
             def->category = L("Machine limits");
-            def->readonly = false;
+            def->readonly = true;
             def->tooltip  = (boost::format("Maximum acceleration of the %1% axis") % axis_upper).str();
             (void)L("Maximum acceleration of the X axis");
             (void)L("Maximum acceleration of the Y axis");
@@ -3116,7 +3118,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("Maximum acceleration for retracting (M204 R)");
     def->sidetext = L("mm/s²");
     def->min = 0;
-    def->readonly = false;
+    def->readonly = true;
     def->mode = comSimple;
     def->set_default_value(new ConfigOptionFloats{ 1500., 1250. });
 
@@ -3127,7 +3129,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("Maximum acceleration for travel (M204 T), it only applies to Marlin 2");
     def->sidetext = L("mm/s²");
     def->min = 0;
-    def->readonly = false;
+    def->readonly = true;
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionFloats{ 0., 0. });
 
@@ -3225,6 +3227,7 @@ void PrintConfigDef::init_fff_params()
     def->sidetext = L("mm");
     def->mode = comAdvanced;
     def->max = 100;
+    def->readonly = true;
     def->set_default_value(new ConfigOptionFloats { 0.4 });
 
     def = this->add("notes", coString);
@@ -3266,7 +3269,9 @@ void PrintConfigDef::init_fff_params()
     def->enum_labels.push_back("Obico");
     def->enum_labels.push_back("Flashforge");
     def->enum_labels.push_back("SimplyPrint");
-    def->mode = comAdvanced;
+    // def->mode = comAdvanced;
+    def->mode = comDevelop;
+    def->readonly = true;
     def->cli = ConfigOptionDef::nocli;
     def->set_default_value(new ConfigOptionEnum<PrintHostType>(htOctoPrint));
     
