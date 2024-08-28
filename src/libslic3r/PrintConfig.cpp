@@ -1812,9 +1812,10 @@ void PrintConfigDef::init_fff_params()
     */
 
     def = this->add("pellet_flow_coefficient", coFloats);
-    // def->label = L("Pellet flow coefficient");
+    def->label = L("Pellet flow coefficient");
     def->tooltip = L("Pellet flow coefficient is emperically derived and allows for volume calculation for pellet printers.\n\nInternally it is converted to filament_diameter. All other volume calculations remain the same.\n\nfilament_diameter = sqrt( (4 * pellet_flow_coefficient) / PI )");
     def->min = 0;
+    def->mode = comDevelop;
     def->set_default_value(new ConfigOptionFloats{ 0.4157 });
 
     def = this->add("filament_shrink", coPercents);
@@ -2674,7 +2675,8 @@ void PrintConfigDef::init_fff_params()
     def          = this->add("pellet_modded_printer", coBool);
     def->label   = L("Pellet Modded Printer");
     def->tooltip = L("Enable this option if your printer uses pellets instead of filaments");
-    def->mode    = comSimple;
+    // def->mode    = comSimple;
+    def->mode = comDevelop;
     def->readonly = true;
     def->set_default_value(new ConfigOptionBool(false));
 
