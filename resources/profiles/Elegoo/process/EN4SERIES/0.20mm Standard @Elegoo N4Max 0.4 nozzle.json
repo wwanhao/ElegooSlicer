@@ -9,8 +9,6 @@
   "default_acceleration": "3000",
   "outer_wall_acceleration": "1500",
   "top_surface_acceleration": "2000",
-  "inner_wall_acceleration": "3000",
-  "travel_acceleration": "3000",
   "compatible_printers": [
     "Elegoo Neptune 4 Max 0.4 nozzle"
   ]

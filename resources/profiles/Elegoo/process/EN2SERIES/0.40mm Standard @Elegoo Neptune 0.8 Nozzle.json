@@ -11,7 +11,6 @@
   "gap_infill_speed": "30",
   "initial_layer_infill_speed": "50",
   "initial_layer_speed": "30",
-  "inner_wall_acceleration": "1000",
   "inner_wall_speed": "60",
   "internal_bridge_speed": "100%",
   "internal_solid_infill_speed": "60",
@@ -25,7 +24,6 @@
   "support_speed": "60",
   "top_surface_acceleration": "1000",
   "top_surface_speed": "30",
-  "travel_acceleration": "1000",
   "only_one_wall_top": "0",
   "enable_arc_fitting": "0",
   "compatible_printers": [
