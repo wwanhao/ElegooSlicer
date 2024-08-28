@@ -3106,7 +3106,7 @@ void PrintConfigDef::init_fff_params()
     //                 "as travel acceleration (M204 T).");
     def->sidetext = L("mm/s²");
     def->min = 0;
-    def->readonly = false;
+    def->readonly = true;
     def->mode = comSimple;
     def->set_default_value(new ConfigOptionFloats{ 1500., 1250. });
 
