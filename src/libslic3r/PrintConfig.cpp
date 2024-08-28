@@ -545,8 +545,8 @@ void PrintConfigDef::init_common_params()
     def = this->add("print_host_webui", coString);
     def->label = L("Device UI");
     def->tooltip = L("Specify the URL of your device user interface if it's not same as print_host");
-    // def->mode = comAdvanced;
-    def->mode = comDevelop;
+    def->mode = comAdvanced;
+    // def->mode = comDevelop;
     def->cli = ConfigOptionDef::nocli;
     def->set_default_value(new ConfigOptionString(""));
 
@@ -554,8 +554,8 @@ void PrintConfigDef::init_common_params()
     def->label = L("API Key / Password");
     def->tooltip = L("ElegooSlicer can upload G-code files to a printer host. This field should contain "
         "the API Key or the password required for authentication.");
-    // def->mode = comAdvanced;
-    def->mode = comDevelop;
+    def->mode = comAdvanced;
+    // def->mode = comDevelop;
     def->cli = ConfigOptionDef::nocli;
     def->set_default_value(new ConfigOptionString(""));
 
@@ -571,8 +571,8 @@ void PrintConfigDef::init_common_params()
     def->label = L("HTTPS CA File");
     def->tooltip = L("Custom CA certificate file can be specified for HTTPS OctoPrint connections, in crt/pem format. "
         "If left blank, the default OS CA certificate repository is used.");
-    // def->mode = comAdvanced;
-    def->mode = comDevelop;
+    def->mode = comAdvanced;
+    // def->mode = comDevelop;
     def->cli = ConfigOptionDef::nocli;
     def->set_default_value(new ConfigOptionString(""));
 
@@ -3247,7 +3247,6 @@ void PrintConfigDef::init_fff_params()
 
     def = this->add("host_type", coEnum);
     def->label = L("Host Type");
-    def->mode = comDevelop;
     def->tooltip = L("ElegooSlicer can upload G-code files to a printer host. This field must contain "
                    "the kind of the host.");
     def->enum_keys_map = &ConfigOptionEnum<PrintHostType>::get_enum_values();
@@ -3275,9 +3274,8 @@ void PrintConfigDef::init_fff_params()
     def->enum_labels.push_back("Obico");
     def->enum_labels.push_back("Flashforge");
     def->enum_labels.push_back("SimplyPrint");
-    // def->mode = comAdvanced;
-    def->mode = comDevelop;
-    // def->readonly = true;
+    def->mode = comAdvanced;
+    def->readonly = true;
     def->cli = ConfigOptionDef::nocli;
     def->set_default_value(new ConfigOptionEnum<PrintHostType>(htOctoPrint));
     

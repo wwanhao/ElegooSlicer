@@ -280,8 +280,8 @@ void PhysicalPrinterDialog::build_printhost_settings(ConfigOptionsGroup* m_optgr
     port_line.append_widget(print_host_printers);
     m_optgroup->append_line(port_line);
 
-    // const auto ca_file_hint = _u8L("HTTPS CA file is optional. It is only needed if you use HTTPS with a self-signed certificate.");
-    const auto ca_file_hint = _u8L("");
+    const auto ca_file_hint = _u8L("HTTPS CA file is optional. It is only needed if you use HTTPS with a self-signed certificate.");
+    // const auto ca_file_hint = _u8L("");
 
     if (Http::ca_file_supported()) {
         option = m_optgroup->get_option("printhost_cafile");
