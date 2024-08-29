@@ -2273,7 +2273,8 @@ void PrintConfigDef::init_fff_params()
     def->sidetext = L("%");
     def->min = 1;
     def->max = 100;
-    def->mode = comAdvanced;
+    // def->mode = comAdvanced;
+    def->mode = comDevelop;
     def->set_default_value(new ConfigOptionPercent(50));
     
     def = this->add("default_jerk", coFloat);
