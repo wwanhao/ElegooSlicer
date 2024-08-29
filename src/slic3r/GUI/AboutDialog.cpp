@@ -153,7 +153,7 @@ wxString CopyrightsDialog::get_html_text()
         _L("License"),
         _L("ElegooSlicer is licensed under "),
         "https://www.gnu.org/licenses/agpl-3.0.html",_L("GNU Affero General Public License, version 3"),
-        _L("ElegooSlicer is based on OrcaSlicer, PrusaSlicer and BambuStudio"),
+        _L("ElegooSlicer is based on OrcaSlicer"),
         _L("Libraries"),
         _L("This software uses open source components whose copyright and other proprietary rights belong to their respective owners"));
 
@@ -247,7 +247,7 @@ AboutDialog::AboutDialog()
         vesizer->Add(0, FromDIP(165), 1, wxEXPAND, FromDIP(5));
         auto version_string = _L("ElegooSlicer ") + " " + std::string(ELEGOOTechSupport_VERSION);
         wxStaticText* version = new wxStaticText(this, wxID_ANY, version_string.c_str(), wxDefaultPosition, wxDefaultSize);
-        wxStaticText* bs_version = new wxStaticText(this, wxID_ANY, wxString::Format("Based on OrcaSlicer, PrusaSlicer and BambuStudio"), wxDefaultPosition, wxDefaultSize);
+        wxStaticText* bs_version = new wxStaticText(this, wxID_ANY, wxString::Format("Based on OrcaSlicer"), wxDefaultPosition, wxDefaultSize);
         bs_version->SetFont(Label::Body_12);
         wxFont version_font = GetFont();
         #ifdef __WXMSW__
@@ -280,10 +280,11 @@ AboutDialog::AboutDialog()
     text_sizer_horiz->Add( 0, 0, 0, wxLEFT, FromDIP(20));
 
     std::vector<wxString> text_list;
-    text_list.push_back(_L("ElegooSlicer is based on OrcaSlicer, BambuStudio, PrusaSlicer, and SuperSlicer."));
-    text_list.push_back(_L("BambuStudio is originally based on PrusaSlicer by PrusaResearch."));
-    text_list.push_back(_L("PrusaSlicer is originally based on Slic3r by Alessandro Ranellucci."));
-    text_list.push_back(_L("Slic3r was created by Alessandro Ranellucci with the help of many other contributors."));
+    text_list.push_back(_L("ElegooSlicer is based on OrcaSlicer"));
+    // text_list.push_back(_L("ElegooSlicer is based on OrcaSlicer, BambuStudio, PrusaSlicer, and SuperSlicer."));
+    // text_list.push_back(_L("BambuStudio is originally based on PrusaSlicer by PrusaResearch."));
+    // text_list.push_back(_L("PrusaSlicer is originally based on Slic3r by Alessandro Ranellucci."));
+    // text_list.push_back(_L("Slic3r was created by Alessandro Ranellucci with the help of many other contributors."));
 
     text_sizer->Add( 0, 0, 0, wxTOP, FromDIP(33));
     bool is_zh = wxGetApp().app_config->get("language") == "zh_CN";
