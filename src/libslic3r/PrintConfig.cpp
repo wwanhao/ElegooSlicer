@@ -3266,7 +3266,7 @@ void PrintConfigDef::init_fff_params()
     def->enum_values.push_back("simplyprint");
     def->enum_labels.push_back("PrusaLink");
     def->enum_labels.push_back("PrusaConnect");
-    def->enum_labels.push_back("OctoPrint");
+    // def->enum_labels.push_back("OctoPrint");
     def->enum_labels.push_back("ELEGOO");
     def->enum_labels.push_back("Duet");
     def->enum_labels.push_back("FlashAir");
