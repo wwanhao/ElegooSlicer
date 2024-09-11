@@ -1,6 +1,6 @@
 {
     "type": "filament",
-    "name": "Elegoo ABS @ECC",
+    "name": "Elegoo Generic ABS @ECC",
     "inherits": "Elegoo Generic ABS @base",
     "from": "system",
     "setting_id": "EASAECC",

@@ -1180,8 +1180,8 @@
         "sub_path": "filament/ECC/Elegoo ASA @ECC.json"
     },
     {
-        "name": "Elegoo ABS @ECC",
-        "sub_path": "filament/ECC/Elegoo ABS @ECC.json"
+        "name": "Elegoo Generic ABS @ECC",
+        "sub_path": "filament/ECC/Elegoo Generic ABS @ECC.json"
     },
 
 
