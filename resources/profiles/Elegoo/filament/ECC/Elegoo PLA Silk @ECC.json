@@ -12,7 +12,7 @@
         "80"
     ],
     "fan_min_speed": [
-        "60"
+        "100"
     ],
     "hot_plate_temp": [
         "60"
