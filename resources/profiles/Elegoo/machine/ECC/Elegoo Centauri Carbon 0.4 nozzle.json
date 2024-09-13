@@ -27,6 +27,8 @@
     "256x20",
     "246x20"
   ],
+  "fan_speedup_time": "10",
+  "fan_kickstart": "5",
   "thumbnails": [
   "144x144"
   ],
