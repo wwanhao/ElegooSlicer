@@ -6,7 +6,7 @@
     "setting_id": "ERPLAPLUSECC",
     "instantiation": "true",
     "fan_cooling_layer_time": [
-        "100"
+        "80"
     ],
     "fan_max_speed": [
         "100"

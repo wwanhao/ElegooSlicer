@@ -6,7 +6,7 @@
     "setting_id": "EPLAMECC",
     "instantiation": "true",
     "fan_cooling_layer_time": [
-        "100"
+        "80"
     ],
     "fan_max_speed": [
         "80"
@@ -24,7 +24,7 @@
         "60"
     ],
     "slow_down_layer_time": [
-        "8"
+        "6"
     ],
     "textured_plate_temp": [
         "65"

@@ -6,7 +6,7 @@
     "filament_id": "EGPLAB00",
     "instantiation": "false",
     "slow_down_layer_time": [
-        "8"
+        "4"
     ],
     "filament_start_gcode": [
         "; Filament start gcode\n"
