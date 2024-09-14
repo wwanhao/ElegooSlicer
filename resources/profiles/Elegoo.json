@@ -1343,6 +1343,10 @@
     {
         "name": "Elegoo PLA Matte @EOS Giga",
         "sub_path": "filament/EOSGIGA/Elegoo PLA Matte @EOS Giga.json"
+    },
+    {
+      "name": "Elegoo Generic ABS",
+      "sub_path": "filament/Generic/Elegoo Generic ABS.json"
     }
 
 
