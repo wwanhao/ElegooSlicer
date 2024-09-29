@@ -17,7 +17,7 @@
     "256x256",
     "0x256"
   ],
-  "printable_height": "256",
+  "printable_height": "257",
   "retract_lift_below": [
       "255"
   ],
@@ -27,6 +27,8 @@
     "256x20",
     "246x20"
   ],
+  "fan_speedup_time": "10",
+  "fan_kickstart": "5",
   "thumbnails": [
   "144x144"
   ],

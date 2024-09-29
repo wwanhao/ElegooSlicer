@@ -68,7 +68,7 @@
       "80"
     ],
     "fan_min_speed": [
-      "50"
+      "80"
     ],
     "hot_plate_temp": [
       "60"
@@ -77,7 +77,7 @@
       "60"
     ],
     "slow_down_layer_time": [
-      "8"
+      "4"
     ],
     "filament_start_gcode": [
         "; Filament start gcode\n"
